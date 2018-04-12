@@ -7,8 +7,13 @@ function random() {
     for (var i = 0; i < 4; i++){
         var j = Math.floor(Math.random() * (4 - 1 + 1) + 1);
         arr.push(j);
+        // console.log(arr);
     }
 }
+function sleep(sleepTime) {
+    setTimeout( function () {
+        console.log("done sleeping!");
+    })};
 
 
 
@@ -43,9 +48,9 @@ $("#btn3").click(function () {
 $("#btn4").click(function () {
     input.push(4);
     $("#data-input").text(input);
-    $("#btn4").css("background-color", "rgba(255,255,0");
+    $("#btn4").css("background-color", "rgba(128,0,128");
     setInterval(function () {
-        $("#btn4").css("background-color", "rgba(255,255,00.5")
+        $("#btn4").css("background-color", "rgba(128,0,128,0.5")
     },300);
 });
 
@@ -65,23 +70,22 @@ $("#btn4").click(function () {
     $("#data-input").text(input);
 });
 
-$("button").click(function () {
+$("button").click(function () {});
 
 
-    if(input.length === arr.length){
-        for(var i = 0; i < arr.length; i++){
-            if(arr[i] === input[i]){
-                $("#data-input").append(" even more success");
-            }
-        }
-    }
-});
+//     if(input.length === arr.length){
+//         for(var i = 0; i < arr.length; i++){
+//             if(arr[i] === input[i]){
+//                 $("#data-input").append(" even more success");
+//             }
+//         }
+//     }
+// });
 
 
 
-var thing = random();
 
-console.log(arr);
+
 // $("#data-input").text(thing);
 //
 
@@ -91,5 +95,45 @@ console.log(arr);
 //         $("#data-input").text("success");
 //     }
 // }
+console.log("arr: "+ arr.length);
+random();
+// arr.forEach(function (arr) {
 
+function stahp(kill) {
+    clearInterval(kill);
+}
+
+var kill = setInterval(function () {
+
+
+
+    switch (arr) {
+        case 1:
+
+            console.log("1");
+            break;
+
+
+        case 2:
+            console.log("2");
+
+            break;
+        case 3:
+
+            console.log("3");
+            break;
+        case 4:
+            console.log("4");
+
+    }
+    console.log(kill);
+    if(kill === 1) {
+        stahp(kill);
+    }
+}, 1000);
+
+
+
+
+console.log(arr);
 
