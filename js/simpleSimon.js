@@ -9,145 +9,10 @@ var arr =[];
 var input = [];
 var showColor = false;
 
-
-// }
-// // function sleep(sleepTime) {
-// //     setTimeout( function () {
-// //         console.log("done sleeping!");
-// //     })};
-// //
-// //
-// //
-// //
-// // $("#btn1").click(function () {
-// //     input.push(1);
-// //     $("#data-input").text(input);
-// //     $("#btn1").css("background-color", "rgba(255,0,0");
-// //     setInterval(function () {
-// //         $("#btn1").css("background-color", "rgba(255,0,0,0.5")
-// //     },300);
-// // });
-// //
-// // $("#btn2").click(function () {
-// //     input.push(2);
-// //     $("#data-input").text(input);
-// //     $("#btn2").css("background-color", "rgba(0,255,0");
-// //     setInterval(function () {
-// //         $("#btn2").css("background-color", "rgba(0,255,0,0.5")
-// //     },300);
-// // });
-// //
-// // $("#btn3").click(function () {
-// //     input.push(3);
-// //     $("#data-input").text(input);
-// //     $("#btn3").css("background-color", "rgba(0,0,255");
-// //     setInterval(function () {
-// //         $("#btn3").css("background-color", "rgba(0,0,255,0.5")
-// //     },300);
-// // });
-// //
-// // $("#btn4").click(function () {
-// //     input.push(4);
-// //     $("#data-input").text(input);
-// //     $("#btn4").css("background-color", "rgba(128,0,128");
-// //     setInterval(function () {
-// //         $("#btn4").css("background-color", "rgba(128,0,128,0.5")
-// //     },300);
-// // });
-// //
-// //
-// // $("#btn2").click(function () {
-// //
-// //     $("#data-input").text(input);
-// // });
-// //
-// // $("#btn3").click(function () {
-// //
-// //     $("#data-input").text(input);
-// // });
-// //
-// // $("#btn4").click(function () {
-// //
-// //     $("#data-input").text(input);
-// // });
-// //
-// // $("button").click(function () {});
-//
-// random();
-// console.log("arr: "+ arr.length);
-// //
-// //
-// //     if(input.length === arr.length){
-// //         for(var i = 0; i < arr.length; i++){
-// //             if(arr[i] === input[i]){
-// //                 $("#data-input").append(" even more success");
-// //             }
-// //         }
-// //     }
-// // ;
-// //
-// //
-// //
-// //
-// //
-// //
-//
-//
-// // }
-//     var id = 0;
-//     var i = 0;
-//
-// console.log(arr);
-//
-// for(var j = 0; j <= arr.length; j++) {
-//
-//     var theArrayValue = arr[j];
-//     console.log("hit the timeout");
-//     setTimeout(function () {
-//
-//
-//     if (theArrayValue === 1) {
-//         $("#btn1").css("background-color", "");
-//         console.log("1");
-//     } else if (theArrayValue === 2) {
-//         console.log("2");
-//         $("#btn2").css("background-color", "rgba(0,255,0");
-//     } else if (theArrayValue === 3) {
-//         $("#btn3").css("background-color", "rgba(0,0,255");
-//         console.log("3");
-//     } else if (theArrayValue === 4) {
-//         console.log("4");
-//         $("#btn4").css("background-color", "rgba(128,0,128");
-//     }
-//
-//     console.log("the log for arr inside loop: ");
-//     console.log(theArrayValue);
-//     console.log("j: " + j);
-//
-//
-// },1000);
-// }
-//
-//
-//         id = setInterval(function () {
-//
-//             console.log("the log for arr inside setinterval: ");
-//             console.log(theArrayValue);
-//             console.log("j: " + j);
-//
-//         }, 1000);
-//
-//         i++;
-//         if (i === 3) {
-//             clearInterval(id);
-//         }
-//
-//
-//
-//
-//
-//
-
+function win() {
+    $("#banner").append("You win")
+    console.log("win");
+}
 
 function buttonPress(x) {
 
@@ -156,15 +21,61 @@ function buttonPress(x) {
         input.push(x);
         console.log(x);
         console.log(input);
+        comparator();
     }
 
 
 
 
 }
-//when a button is pushed the button needs to light up and the
-// value to that number needs to get pushed to the asrray
 
+function comparator() {
+    var result = 0;
+    if (input.length === 4) {
+        for (i = 0; i < arr.length; i++) {
+            if (input[i] === arr[i]) {
+                result = 1;
+
+            } else {
+                result = 2;
+            }
+        }
+    }
+    if (result === 1) {
+        win();
+    } else if (result === 2) {
+        loss();
+    }
+}
+
+function loss() {
+
+    var io = true;
+    var j = 0;
+    var simonLoop  = setInterval(function() {
+
+        if(io === true){
+
+            $("body").css("background-color", "red");
+            j++;
+            io = false;
+        }
+        else if (io === false) {
+            $("body").css("background-color", "black");
+
+            io = true;
+        }
+        if(j === 4){
+            clearInterval(simonLoop);
+            colorReturn();
+            fire();
+
+        }
+
+
+    },100);
+    showColor = true;
+}
 
 function colorReturn() {
 
@@ -224,6 +135,10 @@ function colorChange(x) {
             act = "black"/*"rgba(128,0,128)"*/;
             btn = "#btn4";
             break;
+        case 5:
+            act = "red"/*"rgba(128,0,128)"*/;
+            btn = "body";
+            break;
     }
 
 
@@ -265,12 +180,20 @@ function colorCommand() {
             colorReturn();
         }
 
+
     },500);
     showColor = true;
 }
 
+function fire() {
 
-colorCommand();
+    colorCommand();
+    comparator();
+}
+
+fire();
+
+
 
 
 

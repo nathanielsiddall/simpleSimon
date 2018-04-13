@@ -14,11 +14,22 @@
             outline:none;
             margin: 2px;
         }
+        #wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            height: 800px;
+            justify-content: center;
 
-        #data-input {
-            /*background-color: white;*/
-            /*height: 100px;*/
-            /*width: 200px;*/
+        }
+
+        #banner {
+
+            background-color: white;
+            width: 500px;
+            height: 100px;
+            flex: 1 1 100%;
+            align-content: flex-start;
+
         }
         #btn1 {
             background-color:rgba(255,0,0,0.5);
@@ -39,7 +50,7 @@
 
 <div id="wrapper">
 
-    <div id="data-input"></div>
+    <div id="banner"></div>
 
     <button id="btn1"></button>
     <button id="btn2"></button>
