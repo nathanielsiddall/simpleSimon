@@ -8,7 +8,7 @@
             background-color: beige;
         }
 
-        button {
+        .btn {
             height: 300px;
             width: 300px;
             outline:none;
@@ -17,7 +17,6 @@
         #wrapper {
             display: flex;
             flex-wrap: wrap;
-            height: 800px;
             justify-content: center;
 
         }
@@ -25,23 +24,44 @@
         #banner {
 
             background-color: white;
+
             width: 500px;
             height: 100px;
             flex: 1 1 100%;
             align-content: flex-start;
+            margin-bottom: 40px;
+            display: flex;
 
         }
+        #par {
+           text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+            width: 50%;
+        }
+        #btn0 {
+            width: 50%;
+        }
+
+
         #btn1 {
             background-color:rgba(255,0,0,0.5);
+            border-top-left-radius: 100%;
+
         }
         #btn2 {
             background-color:rgba(0,255,0,0.5);
+            border-top-right-radius: 100%;
         }
         #btn3 {
             background-color:rgba(0,0,255,0.5);
+            border-bottom-left-radius: 100%;
         }
         #btn4 {
             background-color:rgba(128,0,128,0.5);
+            border-bottom-right-radius: 100%;
+
+
         }
     </style>
 
@@ -50,12 +70,17 @@
 
 <div id="wrapper">
 
-    <div id="banner"></div>
+    <div id="banner">
+        <p id="par"></p>
 
-    <button id="btn1"></button>
-    <button id="btn2"></button>
-    <button id="btn3"></button>
-    <button id="btn4"></button>
+        <button id="btn0">Play mechanically similar yet legally distinct version of simon says!</button>
+    </div>
+
+
+    <button class="btn" id="btn1"></button>
+    <button class="btn" id="btn2"></button>
+    <button class="btn" id="btn3"></button>
+    <button class="btn" id="btn4"></button>
 </div>
 
 

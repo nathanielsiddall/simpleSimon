@@ -5,13 +5,20 @@ $("#btn1").click(function () {btn = 1; buttonPress(btn)});
 $("#btn2").click(function () {btn = 2; buttonPress(btn)});
 $("#btn3").click(function () {btn = 3; buttonPress(btn)});
 $("#btn4").click(function () {btn = 4; buttonPress(btn)});
+$("#btn0").click(function () { fire()});
+
+var winCnt = 0;
 var arr =[];
 var input = [];
 var showColor = false;
 
+
 function win() {
-    $("#banner").append("You win")
+    winCnt++;
+    $("#par").empty()
+    $("#par").append("You win. Number of wins: "+ winCnt);
     console.log("win");
+
 }
 
 function buttonPress(x) {
@@ -49,9 +56,12 @@ function comparator() {
 }
 
 function loss() {
+    winCnt = 0;
 
     var io = true;
     var j = 0;
+
+    $("#par").append("How you can you not even follow basic directions?");
     var simonLoop  = setInterval(function() {
 
         if(io === true){
@@ -65,10 +75,12 @@ function loss() {
 
             io = true;
         }
-        if(j === 4){
+        if(j === 10){
             clearInterval(simonLoop);
             colorReturn();
-            fire();
+            $("#par").empty()
+
+
 
         }
 
@@ -84,8 +96,9 @@ function colorReturn() {
     var btn2 = $("#btn2").css("background-color", "rgba(0,255,0,0.5)");
     var btn3 = $("#btn3").css("background-color", "rgba(0,0,255,0.5)");
     var btn4 = $("#btn4").css("background-color", "rgba(128,0,128,0.5)");
+    var back =  $("body").css("background-color", "#696969");
 
-    return btn1 + btn2 + btn3 + btn4;
+    return btn1 + btn2 + btn3 + btn4 + back;
 
 }
 
@@ -187,11 +200,19 @@ function colorCommand() {
 
 function fire() {
 
+    arr =[];
+    input = [];
+    showColor = false;
+
+
+    colorReturn();
+
+
+
     colorCommand();
     comparator();
 }
 
-fire();
 
 
 
