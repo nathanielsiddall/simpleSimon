@@ -5,14 +5,15 @@
     <title>Title</title>
     <style>
         body {
-            background-color: beige;
+            background-color: #696969;
         }
 
         .btn {
-            height: 300px;
-            width: 300px;
+            /*height: 100%;*/
+            /*width: 100%;*/
             outline:none;
             margin: 2px;
+            flex-basis: 40%;
         }
         #wrapper {
             display: flex;
@@ -22,15 +23,14 @@
         }
 
         #banner {
-
             background-color: white;
-
             width: 500px;
             height: 100px;
-            flex: 1 1 100%;
+            flex-basis:100%;
             align-content: flex-start;
             margin-bottom: 40px;
             display: flex;
+            border-radius: 35px;
 
         }
         #par {
@@ -41,6 +41,14 @@
         }
         #btn0 {
             width: 50%;
+        }
+        #btn-box {
+            display: flex;
+            height: 700px;
+            width: 900px;
+            flex-wrap: wrap;
+            justify-content: center;
+
         }
 
 
@@ -76,13 +84,13 @@
         <button id="btn0">Play mechanically similar yet legally distinct version of simon says!</button>
     </div>
 
-
-    <button class="btn" id="btn1"></button>
-    <button class="btn" id="btn2"></button>
-    <button class="btn" id="btn3"></button>
-    <button class="btn" id="btn4"></button>
+    <div id="btn-box">
+        <button class="btn" id="btn1"></button>
+        <button class="btn" id="btn2"></button>
+        <button class="btn" id="btn3"></button>
+        <button class="btn" id="btn4"></button>
+    </div>
 </div>
-
 
 
 <!--end of body-->

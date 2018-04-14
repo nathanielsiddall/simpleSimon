@@ -15,7 +15,7 @@ var showColor = false;
 
 function win() {
     winCnt++;
-    $("#par").empty()
+    $("#par").empty();
     $("#par").append("You win. Number of wins: "+ winCnt);
     console.log("win");
 
@@ -60,7 +60,7 @@ function loss() {
 
     var io = true;
     var j = 0;
-
+    $("#par").empty();
     $("#par").append("How you can you not even follow basic directions?");
     var simonLoop  = setInterval(function() {
 
@@ -133,23 +133,23 @@ function colorChange(x) {
 
     switch (x) {
         case 1:
-            act = "black"/*"rgba(255,0,0)"*/;
+            act = "rgba(255,0,0)";
             btn = "#btn1";
             break;
         case 2:
-            act = "black"/*"rgba(0,255,0)"*/;
+            act = "rgba(0,255,0)";
             btn = "#btn2";
             break;
         case 3:
-            act = "black"/*"rgba(0,0,255)"*/;
+            act = "rgba(0,0,255)";
             btn = "#btn3";
             break;
         case 4:
-            act = "black"/*"rgba(128,0,128)"*/;
+            act = "rgba(128,0,128)";
             btn = "#btn4";
             break;
         case 5:
-            act = "red"/*"rgba(128,0,128)"*/;
+            act = "rgba(128,0,128)";
             btn = "body";
             break;
     }
